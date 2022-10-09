@@ -1,17 +1,19 @@
 :root {
-    --primary-text-color: #757575;
-    --secondary-text-color: #212121;
-    --accent-text-color: #2196F3;
-    --white-text-color: #FFFFFF;
-    --secondary-bg-color: #F5F4FA;
-    --dark-bg-color: #2F303A;
+  --primary-text-color: #757575;
+  --secondary-text-color: #212121;
+  --accent-text-color: #2196f3;
+  --white-text-color: #ffffff;
+  --icon-color: #afb1b8;
+  --secondary-bg-color: #f5f4fa;
+  --dark-bg-color: #2f303a;
+  --item-gap: 30px;
 }
 
 body {
-    color: var(--primary-text-color);
-    font-family: 'Roboto', 'Verdana', sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+  font-family: "Roboto", "Verdana", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.03em;
 }
 
 h1,
@@ -22,284 +24,440 @@ h5,
 h6,
 p,
 ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .list {
-    list-style: none;
+  list-style: none;
 }
 
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 1200px;
 }
 
 .visually-hidden {
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    margin: -1px;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 /* Хедер */
 .header {
-    display: flex;
-    align-items: center;
+  border-bottom: 1px solid #ececec;
+}
 
+.header .container {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-    display: block;
-    padding-top: 24px;
-    padding-bottom: 25px;
-    margin-right: 93px;
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  margin-right: 93px;
 
-    color: var(--accent-text-color);
-    font-family: 'Raleway', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
-    letter-spacing: 0.03em;
+  color: var(--accent-text-color);
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
 }
 
 .dark-logo {
-    color: #000000;
+  color: #000000;
 }
 
 .nav {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .navigation {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-.navigation li:not(:last-child) {
-    margin-right: 50px;
+.navigation .item:not(:last-child) {
+  margin-right: 50px;
 }
 
 .navigation .link {
-    display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 
-    color: var(--secondary-text-color);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
+  color: var(--secondary-text-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
 }
 
 .navigation .link:hover,
 .navigation .link:focus {
-    color: var(--accent-text-color);
+  color: var(--accent-text-color);
 }
 
 .navigation .current {
-    color: var(--accent-text-color);
+  color: var(--accent-text-color);
 }
 
 .header-contacts {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
 
-.header-contacts .link {
-    display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
+.header-contact {
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  gap: 10px;
+  align-items: center;
 
-    color: var(--primary-text-color);
-    font-weight: 500;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
 }
 
-.header-contacts .link:hover,
-.header-contacts .link:focus {
-    color: var(--accent-text-color);
+.header-contact:hover,
+.header-contact:focus {
+  color: var(--accent-text-color);
 }
 
-.header-contacts li+li {
-    margin-left: 50px;
+.header-contact-icon {
+  fill: var(--primary-text-color);
+}
+
+.header-contact:hover .header-contact-icon,
+.header-contact:focus .header-contact-icon {
+  fill: var(--accent-text-color);
+}
+
+.header-contacts li + li {
+  margin-left: 50px;
 }
 
 /* Шапка */
 
 .section {
-    padding-top: 94px;
-    padding-bottom: 94px;
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 .hero {
-    background-color: var(--dark-bg-color);
-    text-align: center;
-    padding-top: 200px;
+  margin: 0 auto;
+  min-height: 600px;
+  max-width: 1600px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/hero.jpg");
+  background-color: #c4c4c4;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
 }
 
 .hero-title {
-    width: 696px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 696px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
 
-    color: var(--white-text-color);
-    font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
-    text-align: center;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+  color: var(--white-text-color);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .hero-button {
-    display: inline-block;
-    margin-bottom: 200px;
-    padding: 10px 32px;
-    border-radius: 4px;
-    border-color: transparent;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 4px;
+  border-color: transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-    color: var(--white-text-color);
-    background-color: var(--accent-text-color);
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.06em;
-    cursor: pointer;
+  color: var(--white-text-color);
+  background-color: var(--accent-text-color);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  cursor: pointer;
 }
 
 .hero-button:hover,
 .hero-button:focus {
-    background-color: #188CE8;
+  background-color: #188ce8;
 }
 
 /* Особливості & Чим ми займаємось */
+.section.no-bottom-padding {
+  padding-bottom: 0;
+}
+
+.features {
+  display: flex;
+}
+
+.features .item {
+  flex-basis: calc((100% - 90px) / 4);
+}
+
+.features .item:not(:last-child) {
+  margin-right: var(--item-gap);
+}
 
 .feature-title {
-    color: var(--secondary-text-color);
+  margin-bottom: 10px;
 
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.14;
-    text-transform: uppercase;
+  color: var(--secondary-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
 }
 
 .feature-text {
-    line-height: 1.71;
+  line-height: 1.71;
 }
 
 .section-title {
-    color: var(--secondary-text-color);
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.17;
-    text-align: center;
+  margin-bottom: 50px;
+
+  color: var(--secondary-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}
+
+.examples {
+  display: flex;
+}
+
+.examples .item:not(:last-child) {
+  margin-right: var(--item-gap);
 }
 
 /* Команда */
 
 .team {
-    background-color: var(--secondary-bg-color);
+  background-color: var(--secondary-bg-color);
+}
+
+.team-members {
+  display: flex;
 }
 
 .team-card {
-    background-color: #FFFFFF;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-card:not(:last-child) {
+  margin-right: var(--item-gap);
+}
+
+.team-photo {
+  display: block;
 }
 
 .team-title {
-    color: var(--secondary-text-color);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.19;
-    text-align: center;
+  margin-bottom: 10px;
+
+  color: var(--secondary-text-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
 }
 
 .team-position {
-    font-size: 16px;
-    line-height: 1.19;
-    text-align: center;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  margin-bottom: 16px;
+}
 
+.team-content {
+  padding-top: var(--item-gap);
+  padding-bottom: var(--item-gap);
+}
+
+.team-contacts {
+  display: flex;
+  gap: 10px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.team-contact-link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.team-contact-icon {
+  fill: var(--icon-color);
+}
+
+.team-contact-link:hover {
+  background-color: var(--accent-text-color);
+}
+
+.team-contact-link:hover > .team-contact-icon {
+  fill: var(--white-text-color);
 }
 
 /* Футер */
 
 .footer {
-    background-color: var(--dark-bg-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--dark-bg-color);
+}
+
+.footer .logo {
+  margin-bottom: 20px;
+  padding: 0;
 }
 
 .light-logo {
-    color: #FFFFFF;
+  color: #ffffff;
+}
+
+.address .item:not(:last-child) {
+  margin-bottom: 9px;
 }
 
 .address a {
-    color: var(--white-text-color);
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.71;
+  color: var(--white-text-color);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
 }
 
 .address a:hover,
 .address a:focus {
-    color: var(--accent-text-color);
+  color: var(--accent-text-color);
 }
 
 .address .contact {
-    color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Портфоліо */
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.buttons .item:not(:last-child) {
+  margin-right: 8px;
+}
 
 .button {
-    display: inline-block;
+  display: inline-block;
+  padding: 6px 22px;
+  border-color: transparent;
+  border-radius: 4px;
 
-    color: var(--secondary-text-color);
-    background-color: var(--secondary-bg-color);
-    cursor: pointer;
-    font-family: inherit;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.62;
-    text-align: center;
-    letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+  background-color: var(--secondary-bg-color);
+  cursor: pointer;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  letter-spacing: 0.03em;
 }
 
 .button:hover,
 .button:focus {
-    color: var(--white-text-color);
-    background-color: var(--accent-text-color);
+  color: var(--white-text-color);
+  background-color: var(--accent-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * var(--item-gap));
+  margin-bottom: calc(-1 * var(--item-gap));
+}
+
+.projects > .item {
+  flex-basis: calc(100% / 3 - var(--item-gap));
+  margin-right: var(--item-gap);
+  margin-bottom: var(--item-gap);
+}
+
+.project-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 20px 24px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .project-title {
-    color: var(--secondary-text-color);
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
+  margin-bottom: 4px;
+
+  color: var(--secondary-text-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
 }
 
 .project-description {
-    color: var(--primary-text-color);
-    font-size: 16px;
-    line-height: 1.88;
+  color: var(--primary-text-color);
+  font-size: 16px;
+  line-height: 1.88;
 }
