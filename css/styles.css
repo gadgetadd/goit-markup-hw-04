@@ -420,7 +420,7 @@ ul {
 .footer-blocks {
   display: flex;
   gap: 70px;
-  align-items: center;
+  align-items: baseline;
 }
 
 .footer-social {
