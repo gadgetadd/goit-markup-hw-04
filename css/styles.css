@@ -237,7 +237,10 @@ ul {
 }
 
 .feature-block {
-  padding: 25px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
   margin-bottom: 30px;
   background-color: var(--secondary-bg-color);
   border-radius: 4px;
@@ -330,10 +333,11 @@ ul {
 }
 
 .team-contact-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
-  padding: 12px;
   border-radius: 50%;
 }
 
@@ -341,11 +345,13 @@ ul {
   fill: var(--icon-color);
 }
 
-.team-contact-link:hover {
+.team-contact-link:hover,
+.team-contact-link:focus {
   background-color: var(--accent-text-color);
 }
 
-.team-contact-link:hover > .team-contact-icon {
+.team-contact-link:hover > .team-contact-icon,
+.team-contact-link:focus > .team-contact-icon {
   fill: var(--white-text-color);
 }
 
@@ -357,26 +363,29 @@ ul {
 }
 
 .client-item {
-  border: 1px solid var(--icon-color);
-  border-radius: 4px;
+  flex-basis: calc((100% - 150px) / 6);
 }
 
 .client-link {
-  display: block;
-  padding: 16px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 92px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
 }
 
 .client-icon {
   fill: var(--icon-color);
 }
 
-.client-item:hover,
-.client-item:focus {
+.client-link:hover,
+.client-link:focus {
   border-color: var(--accent-text-color);
 }
 
-.client-item:hover .client-icon,
-.client-item:focus .client-icon {
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
   fill: var(--accent-text-color);
 }
 
@@ -437,10 +446,12 @@ ul {
 }
 
 .studio-contact-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
-  padding: 12px;
+
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -449,12 +460,9 @@ ul {
   fill: var(--white-text-color);
 }
 
-.studio-contact-link:hover {
+.studio-contact-link:hover,
+.studio-contact-link:focus {
   background-color: var(--accent-text-color);
-}
-
-.studio-contact-link:hover > .team-contact-icon {
-  fill: var(--white-text-color);
 }
 
 /* Портфоліо */
